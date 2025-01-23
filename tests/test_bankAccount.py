@@ -18,19 +18,19 @@ class bankAccount_tests(unittest.TestCase):
 
     def test_deposit(self):
         new_balance = self.account.deposit(500)
-        assert new_balance == 1500
+        self.assertEqual(new_balance,1500,"horror el balance no es igual")
 
     def test_withdraw(self):
         new_balance = self.account.withdraw(1000)
-        assert new_balance == 0
+        self.assertEqual(new_balance,0,"horror el balance no es igual")
 
     def test_get_balance(self):
-        assert self.account.check_balance() == 1000
+        self.assertEqual(self.account.check_balance(), 1000, "horror el balance no es igual")
 
 
     def test_transfer(self):
         new_balance = self.account.transfer(1000)
-        assert new_balance == 0
+        self.assertEqual(new_balance,0,"horror el balance no es igual")
 
     def test_tranfer_error(self):
         try:
@@ -46,7 +46,7 @@ class bankAccount_tests(unittest.TestCase):
         self.assertTrue(os.path.exists('transaction_log.txt'))
 
     def test_count_transactions(self):
-        assert self._count_lines(self.account.log_file) == 1
+        self.assertEqual(self._count_lines(self.account.log_file), 1)
         self.account.deposit(500)
-        assert self._count_lines(self.account.log_file) == 2
+        self.assertEqual(self._count_lines(self.account.log_file),  2)
 
