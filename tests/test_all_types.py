@@ -1,5 +1,4 @@
 
-
 import unittest
 
 SERVER = "server b"
