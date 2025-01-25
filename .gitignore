@@ -1,6 +1,11 @@
 # Created by https://www.toptal.com/developers/gitignore/api/windows,linux,macos,pycharm,python
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,linux,macos,pycharm,python
 
+
+# Ignorar la carpeta .vscode (configuración de Visual Studio Code)
+.vscode/
+
+#ignorar la cerpeta generada por pycharm .idea
 .idea/
 ### Linux ###
 *~
